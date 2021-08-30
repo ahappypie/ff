@@ -1,0 +1,24 @@
+{
+  "name": "ff",
+  "version": "0.0.1",
+  "description": "Parse and display data from the ESPN Fantasy Football API",
+  "main": "index.js",
+  "scripts": {
+    "main": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahappypie/ff.git"
+  },
+  "author": "Brian Bagdasarian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahappypie/ff/issues"
+  },
+  "homepage": "https://github.com/ahappypie/ff#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.28.0",
+    "espn-fantasy-football-api": "^0.16.1"
+  }
+}
