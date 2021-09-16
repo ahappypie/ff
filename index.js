@@ -1,13 +1,12 @@
 const league = require('./src/league');
 const getBoxscore = require('./src/scores');
-const players = require('./src/players');
 const s3upload = require('./src/s3upload');
 
 (async () => {
-    const season = 2020;
-    const week = 2;
-    //const l = await league(season);
-    //await s3upload(`leagues/${l.leagueId}`, l);
+    const season = 2021;
+    const week = 1;
+    const l = await league(season);
+    await s3upload(`leagues/season=${season}/${process.env.LEAGUE_ID}`, l);
 
     const s = await getBoxscore(season, week);
     await s3upload(`stats/season=${season}/week=${week}/${process.env.LEAGUE_ID}`, s.statsString);

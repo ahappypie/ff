@@ -20,11 +20,11 @@ from players
 group by playerid, name, defaultposition, eligiblepositions, season
 having count(*) > 1;
 
-select *, s.number - pr.number as diff
+select name, s.number as actual, pr.number as projected, s.number - pr.number as diff
 from players p
 inner join stats s on p.playerid = s.playerid and p.season = s.season
 inner join projected pr on p.playerid = pr.playerid and p.season = pr.season and s.stat = pr.stat
-where s.week = 2
+where s.week = 1
 and p.defaultposition = 'RB'
 and s.stat = 'rushingYards'
 order by diff desc
