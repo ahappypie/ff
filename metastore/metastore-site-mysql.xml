@@ -1,7 +1,7 @@
 <configuration>
     <property>
         <name>metastore.thrift.uris</name>
-        <value>thrift://metastore:9083</value>
+        <value>thrift://hive-metastore:9083</value>
         <description>Thrift URI for the remote metastore. Used by metastore client to connect to remote metastore.</description>
     </property>
     <property>
@@ -14,29 +14,24 @@
     </property>
     <property>
         <name>javax.jdo.option.ConnectionDriverName</name>
-        <value>org.postgresql.Driver</value>
-    </property>
-    <property>
-        <name>metastore.try.direct.sql.ddl</name>
-        <value>false</value>
-    </property>
-    <property>
-        <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:postgresql://postgres:5432/metastore_db</value>
-    </property>
-    <property>
-        <name>javax.jdo.option.ConnectionUserName</name>
-        <value>ff</value>
-    </property>
-    <property>
-        <name>javax.jdo.option.ConnectionPassword</name>
-        <value>f4nt45y</value>
+        <value>com.mysql.cj.jdbc.Driver</value>
     </property>
 
     <property>
-        <name>fs.s3a.impl</name>
-        <value>org.apache.hadoop.fs.s3a.S3AFileSystem</value>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://mariadb:3306/metastore_db</value>
     </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>admin</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>admin</value>
+    </property>
+
     <property>
         <name>fs.s3a.access.key</name>
         <value>minio</value>
@@ -53,4 +48,5 @@
         <name>fs.s3a.path.style.access</name>
         <value>true</value>
     </property>
+
 </configuration>
